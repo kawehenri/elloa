@@ -1,9 +1,11 @@
-# Deploy da pasta dist/ para GitHub Pages (evita publicar o código-fonte e o erro de MIME em .tsx)
+# Publica só a pasta dist/ no GitHub Pages.
+# Requisito: Repo → Settings → Pages → Build: GitHub Actions (não "Deploy from branch" com pasta errada).
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main, master]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -25,19 +27,24 @@ jobs:
           node-version: '20'
           cache: npm
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install and build
+        run: npm ci && npm run build
+
+      - name: Verificar index.html na dist
+        run: |
+          test -f dist/index.html || (echo "::error::dist/index.html não existe — o build falhou?" && exit 1)
+          ls -la dist/
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy
         id: deployment
