@@ -1,6 +1,6 @@
 /**
  * Conteúdo central do site — edite aqui nome, textos, links e imagens.
- * Imagens locais: coloque arquivos em /public e use caminhos como "/foto.jpg".
+ * Imagens locais: coloque arquivos em /public/images e use caminhos como "/images/foto.jpg".
  */
 
 export type NavItem = { id: string; label: string; href: string }
@@ -9,7 +9,6 @@ export type SocialLink = {
   id: string
   label: string
   href: string
-  /** Nome do ícone: instagram | youtube | tiktok | twitter | linkedin | generic */
   icon: 'instagram' | 'youtube' | 'tiktok' | 'twitter' | 'linkedin' | 'generic'
 }
 
@@ -17,107 +16,106 @@ export type StatItem = { id: string; value: string; label: string; hint?: string
 
 export type GalleryImage = { id: string; src: string; alt: string }
 
+export type LogoItem = { src: string; alt: string }
+
 export const site = {
   seo: {
-    title: 'Ana Costa | Judô — Portfólio',
+    title: 'Elloá Pessoa | Judô — Portfólio',
     description:
-      'Portfólio de atleta de judô: trajetória, conquistas, galeria e contato.',
-    /** URL absoluta da imagem para Open Graph (troque ao publicar) */
-    ogImage: 'https://images.unsplash.com/photo-1549719386-74dfcbf7a31e?w=1200&h=630&fit=crop',
-    /** Domínio final do site, ex.: https://seudominio.com */
+      'Portfólio de Elloá Pessoa, judoca Sub15 -52kg da Equipe Corpo Arte (Brasília-DF/GO). Federada pela FEMEJU e CBJ. Conquistas, trajetória e galeria.',
+    ogImage: '/images/perfil.jpeg',
     siteUrl: 'https://example.com',
   },
 
   brand: {
-    name: 'Ana Costa',
+    name: 'Elloá Pessoa',
   },
 
   athlete: {
-    fullName: 'Ana Costa',
-    tagline: 'Judô · Categoria meio-leve · Clube de elite',
-    belt: 'Faixa preta · 2º dan',
-    club: 'Associação Atlética (placeholder)',
-    /** Foto principal do hero — substitua por foto em /public se preferir */
-    heroImage:
-      'https://images.unsplash.com/photo-1549719386-74dfcbf7a31e?w=1600&q=80&auto=format&fit=crop',
-    heroImageAlt: 'Atleta de judô em treino no tatame',
+    fullName: 'Elloá Pessoa',
+    tagline: 'Judô · Sub15 -52kg · Equipe Corpo Arte',
+    belt: 'Brasília - DF / GO',
+    club: 'Equipe Corpo Arte',
+    heroImage: '/images/perfil.jpeg',
+    heroImageAlt: 'Elloá Pessoa sorrindo com medalha e judogi',
   },
 
-  /** Botão principal do hero (portfólio) */
   heroCta: { label: 'Ver galeria', href: '#galeria' },
 
   nav: [
     { id: 'sobre', label: 'Sobre', href: '#sobre' },
     { id: 'conquistas', label: 'Conquistas', href: '#conquistas' },
-    { id: 'experiencia', label: 'Experiência', href: '#experiencia' },
+    { id: 'trajetoria', label: 'Trajetória', href: '#trajetoria' },
     { id: 'galeria', label: 'Galeria', href: '#galeria' },
     { id: 'contato', label: 'Contato', href: '#contato' },
   ] satisfies NavItem[],
 
   about: {
     title: 'Sobre',
-    lead: 'Competidora dedicada, com foco em técnica, condicionamento e mentalidade de alto nível.',
+    lead: 'Judoca da categoria Sub15 -52kg, representando a Equipe Corpo Arte de Brasília-DF. Federada pela FEMEJU (Federação Metropolitana de Judô do Distrito Federal) e pela CBJ (Confederação Brasileira de Judô).',
     paragraphs: [
-      'Atuo com disciplina diária em treinos de judô, preparação física e análise de vídeo. Busco representar com ética tanto no tatame quanto fora dele, conectando-me com público que valoriza esporte e superação.',
-      'Este site funciona como portfólio: reúne um panorama da minha trajetória no judô e materiais para quem acompanha minha carreira.',
+      'Comecei no judô ainda criança, e desde os primeiros passos no tatame descobri uma paixão que me acompanha até hoje. Ao longo dos anos, evolui de etapas regionais para campeonatos nacionais e internacionais, incluindo o Campeonato Brasileiro, Pan-Americano (Varadero 2024) e Tour Sul-Americano (Assunção 2025).',
+      'Minha rotina combina treinos técnicos, preparação física e muita dedicação. Este portfólio reúne a minha trajetória, números e momentos marcantes dentro e fora do tatame.',
     ],
-    values: ['Disciplina e respeito ao judogi', 'Performance com responsabilidade', 'Inspiração para novas gerações'],
+    values: [
+      'Disciplina e constância no treino',
+      'Respeito ao adversário e ao judô',
+      'Busca contínua por evolução',
+    ],
   },
 
   stats: [
-    { id: '1', value: '12+', label: 'Anos de tatame', hint: 'Incluindo base e alto rendimento' },
-    { id: '2', value: '40+', label: 'Pódios estaduais', hint: 'Dados ilustrativos' },
-    { id: '3', value: '15+', label: 'Eventos nacionais', hint: 'Participações e convocações' },
-    { id: '4', value: '5+', label: 'Seleções e convocações', hint: 'Substitua por dados oficiais' },
+    { id: '1', value: '52', label: 'Competições' },
+    { id: '2', value: '137', label: 'Lutas' },
+    { id: '3', value: '28', label: 'Ouros' },
+    { id: '4', value: '42', label: 'Medalhas no total', hint: '28 ouro · 10 prata · 4 bronze' },
   ] satisfies StatItem[],
 
   partnerships: {
-    title: 'Experiência',
+    title: 'Trajetória',
     intro:
-      'Treinos de alto rendimento, competições e evolução técnica no judô. Aqui destaco aspectos da minha formação e do dia a dia no tatame.',
+      'De etapas regionais em Brasília até competições internacionais na América do Sul e Central. Cada campeonato representou um novo desafio e aprendizado.',
     bullets: [
-      'Preparação física e técnica com acompanhamento profissional',
-      'Participação em campeonatos estaduais e nacionais',
-      'Foco em constância, análise de performance e mentalidade competitiva',
+      'Campeonato Pan-Americano — Varadero, Cuba (2024)',
+      'Tour Sul-Americano — Assunção, Paraguai (2025)',
+      'Campeonato Brasileiro de Judô (2023, 2024, 2025)',
+      'JEBS — Jogos Escolares Brasileiros (2024)',
+      'Jogos Escolares de Goiás — Campeã (2024)',
+      'Copa Minas de Judô (2025)',
+      'Noite dos Campeões — Judô Brasília (2023, 2024)',
     ],
-    /** Número de “slots” de imagem/logo (placeholders) */
-    logoSlotCount: 4,
-    logoSectionTitle: 'Destaques (placeholder)',
+    federations: [
+      { src: '/images/femeju.png', alt: 'FEMEJU — Federação Metropolitana de Judô do Distrito Federal' },
+      { src: '/images/cbj.jpg', alt: 'CBJ — Confederação Brasileira de Judô' },
+      { src: '/images/Corpo_arte_EQUIPE.png', alt: 'Equipe Corpo Arte — Brasília-DF' },
+    ] satisfies LogoItem[],
+    sponsors: [
+      { src: '/images/parceria_compete_brasilia.png', alt: 'Compete Brasília' },
+      { src: '/images/parceria_luminyoralstudio.jpeg', alt: 'Luminy Oral Studio' },
+      { src: '/images/parceria_pessoa_promotora.jpeg', alt: 'Pessoa Promotora — Empréstimo Consignado' },
+    ] satisfies LogoItem[],
   },
 
   gallery: {
     title: 'Galeria',
     images: [
-      {
-        id: 'g1',
-        src: 'https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800&q=80&auto=format&fit=crop',
-        alt: 'Treinamento de artes marciais em academia',
-      },
-      {
-        id: 'g2',
-        src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
-        alt: 'Atleta em treino de força',
-      },
-      {
-        id: 'g3',
-        src: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
-        alt: 'Pesos e equipamento de ginástica',
-      },
-      {
-        id: 'g4',
-        src: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
-        alt: 'Academia e ambiente de treino',
-      },
-      {
-        id: 'g5',
-        src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
-        alt: 'Aquecimento antes da competição',
-      },
-      {
-        id: 'g6',
-        src: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&q=80&auto=format&fit=crop',
-        alt: 'Detalhe de kimono de judô',
-      },
+      { id: 'g01', src: '/images/campbra2024_1.jpeg', alt: 'Campeonato Brasileiro 2024 — Elloá no tatame' },
+      { id: 'g02', src: '/images/panamericano_2024.jpeg', alt: 'Pódio do Pan-Americano Varadero 2024' },
+      { id: 'g03', src: '/images/jebs2024_1.jpeg', alt: 'JEBS 2024 — comemoração após a luta' },
+      { id: 'g04', src: '/images/copaminas2025_1.jpeg', alt: 'Copa Minas 2025 — golpe durante a luta' },
+      { id: 'g05', src: '/images/etapas2026_1.jpeg', alt: 'Etapa 2026 — concentração antes da luta' },
+      { id: 'g06', src: '/images/sula_2025.jpeg', alt: 'Tour Sul-Americano 2025 — bandeira Corpo Arte' },
+      { id: 'g07', src: '/images/jogosescolaresgoias_campea_2024.jpeg', alt: 'Jogos Escolares de Goiás 2024 — 1º lugar' },
+      { id: 'g08', src: '/images/noite_dos_campeoes.jpeg', alt: 'Noite dos Campeões 2024 — troféu' },
+      { id: 'g09', src: '/images/sensei.jpeg', alt: 'Elloá com o sensei da Corpo Arte' },
+      { id: 'g10', src: '/images/equipe_e_amizades.jpeg', alt: 'Equipe e amizades no tatame' },
+      { id: 'g11', src: '/images/incio_de_tudo.jpeg', alt: 'O início de tudo — primeiro judogi' },
+      { id: 'g12', src: '/images/primeira_medalha.jpeg', alt: 'Primeira medalha conquistada' },
+      { id: 'g13', src: '/images/primeiro_trofeu.jpeg', alt: 'Noite dos Campeões 2023 — primeiro troféu' },
+      { id: 'g14', src: '/images/campbra2025_1.jpeg', alt: 'Camp. Brasileiro 2025 — medalha CBJ' },
+      { id: 'g15', src: '/images/sulamericano2025.jpeg', alt: 'Tour Sul-Americano Assunção 2025 — equipe' },
+      { id: 'g16', src: '/images/regional2026.jpeg', alt: 'A caminho do Regional 2026' },
+      { id: 'g17', src: '/images/campbra2023.jpeg', alt: 'Campeonato Brasileiro 2023 — kimono azul' },
     ] satisfies GalleryImage[],
   },
 
@@ -125,7 +123,7 @@ export const site = {
     title: 'Contato',
     lead: 'Mensagens, convites e oportunidades — respondo por e-mail quando possível.',
     email: 'contato@exemplo.com',
-    phone: '+55 (11) 99999-0000',
+    phone: '+55 (61) 99999-0000',
     ctaPrimary: {
       label: 'Enviar e-mail',
       href: 'mailto:contato@exemplo.com?subject=Contato%20pelo%20portf%C3%B3lio',
@@ -136,8 +134,8 @@ export const site = {
   },
 
   footer: {
-    rights: '© 2026 Ana Costa. Todos os direitos reservados.',
-    note: 'Imagens de exemplo (Unsplash) — substitua por fotos próprias na publicação.',
+    rights: '© 2026 Elloá Pessoa. Todos os direitos reservados.',
+    note: 'Equipe Corpo Arte — Brasília-DF',
   },
 } as const
 

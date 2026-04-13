@@ -37,8 +37,8 @@ function App() {
           title={site.partnerships.title}
           intro={site.partnerships.intro}
           bullets={site.partnerships.bullets}
-          logoSlotCount={site.partnerships.logoSlotCount}
-          logoSectionTitle={site.partnerships.logoSectionTitle}
+          federations={site.partnerships.federations}
+          sponsors={site.partnerships.sponsors}
         />
         <Gallery title={site.gallery.title} images={site.gallery.images} />
         <Contact

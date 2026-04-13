@@ -14,8 +14,7 @@ export function Gallery({ title, images }: Props) {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-white">{title}</h2>
         <p className="mt-2 text-slate-400">
-          Personalize as fotos em <code className="rounded bg-slate-800 px-1.5 py-0.5 text-slate-200">src/content/site.ts</code> ou em{' '}
-          <code className="rounded bg-slate-800 px-1.5 py-0.5 text-slate-200">public/</code>.
+          Momentos marcantes dentro e fora do tatame.
         </p>
         <div className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3">
           {images.map((img) => (
