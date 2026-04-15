@@ -3,9 +3,11 @@ import { Achievements } from './components/Achievements'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { Gallery } from './components/Gallery'
+import { Goals } from './components/Goals'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Partners } from './components/Partners'
+import { Sponsorship } from './components/Sponsorship'
 import { site } from './content/site'
 
 function App() {
@@ -31,8 +33,13 @@ function App() {
           lead={site.about.lead}
           paragraphs={site.about.paragraphs}
           values={site.about.values}
+          teamTitle={site.about.teamTitle}
+          teamDescription={site.about.teamDescription}
+          teamCoach={site.about.teamCoach}
+          dreamQuote={site.about.dreamQuote}
         />
         <Achievements stats={site.stats} />
+        <Goals title={site.goals.title} intro={site.goals.intro} items={site.goals.items} />
         <Partners
           title={site.partnerships.title}
           intro={site.partnerships.intro}
@@ -41,6 +48,11 @@ function App() {
           sponsors={site.partnerships.sponsors}
         />
         <Gallery title={site.gallery.title} images={site.gallery.images} />
+        <Sponsorship
+          title={site.sponsorship.title}
+          pitch={site.sponsorship.pitch}
+          benefits={site.sponsorship.benefits}
+        />
         <Contact
           title={site.contact.title}
           lead={site.contact.lead}

@@ -3,12 +3,25 @@ type Props = {
   lead: string
   paragraphs: readonly string[]
   values: readonly string[]
+  teamTitle: string
+  teamDescription: string
+  teamCoach: string
+  dreamQuote: string
 }
 
-export function About({ title, lead, paragraphs, values }: Props) {
+export function About({
+  title,
+  lead,
+  paragraphs,
+  values,
+  teamTitle,
+  teamDescription,
+  teamCoach,
+  dreamQuote,
+}: Props) {
   return (
     <section
-      id="sobre"
+      id="apresentacao"
       className="scroll-mt-nav border-b border-slate-800/80 bg-slate-950 py-16 sm:py-20"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -35,6 +48,19 @@ export function About({ title, lead, paragraphs, values }: Props) {
               ))}
             </ul>
           </aside>
+        </div>
+        <div className="mt-10 grid gap-4 lg:grid-cols-2">
+          <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
+            <h3 className="text-xl font-semibold text-white">{teamTitle}</h3>
+            <p className="mt-3 text-slate-300">{teamDescription}</p>
+            <p className="mt-3 text-slate-400">{teamCoach}</p>
+          </article>
+          <blockquote className="rounded-2xl border border-sky-700/40 bg-gradient-to-br from-brand-900/40 to-slate-900 p-6 text-lg font-semibold leading-relaxed text-sky-100">
+            <p className="text-sm font-semibold uppercase tracking-wide text-sky-300">Sonho Olímpico</p>
+            <div className="mt-3">
+            "{dreamQuote}"
+            </div>
+          </blockquote>
         </div>
       </div>
     </section>
