@@ -10,6 +10,10 @@ type Props = {
 }
 
 function LogoCard({ logo }: { logo: LogoItem }) {
+  const instagramLinks = logo.instagramLinks ?? [
+    { handle: logo.instagramHandle, href: logo.instagramHref },
+  ]
+
   return (
     <div className="flex flex-col items-center rounded-xl border border-slate-700 bg-white/95 p-4 transition hover:border-sky-400/50 hover:shadow-lg hover:shadow-sky-900/10">
       <div className="flex h-24 w-full items-center justify-center">
@@ -22,16 +26,21 @@ function LogoCard({ logo }: { logo: LogoItem }) {
         />
       </div>
       <p className="mt-3 text-center text-xs font-medium text-slate-600">{logo.alt}</p>
-      <a
-        href={logo.instagramHref}
-        target="_blank"
-        rel="noreferrer noopener"
-        className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-sky-500 hover:bg-sky-50 hover:text-sky-700"
-        aria-label={`Instagram ${logo.instagramHandle}`}
-      >
-        <SocialIcon icon="instagram" className="h-3.5 w-3.5" />
-        <span>{logo.instagramHandle}</span>
-      </a>
+      <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
+        {instagramLinks.map((instagram) => (
+          <a
+            key={instagram.handle}
+            href={instagram.href}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-sky-500 hover:bg-sky-50 hover:text-sky-700"
+            aria-label={`Instagram ${instagram.handle}`}
+          >
+            <SocialIcon icon="instagram" className="h-3.5 w-3.5" />
+            <span>{instagram.handle}</span>
+          </a>
+        ))}
+      </div>
     </div>
   )
 }

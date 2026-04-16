@@ -34,6 +34,7 @@ export type LogoItem = {
   alt: string
   instagramHandle: string
   instagramHref: string
+  instagramLinks?: { handle: string; href: string }[]
 }
 
 export const site = {
@@ -161,6 +162,10 @@ export const site = {
         alt: 'Equipe Corpo Arte — Brasília-DF',
         instagramHandle: '@judocorpoarte',
         instagramHref: 'https://instagram.com/judocorpoarte',
+        instagramLinks: [
+          { handle: '@judocorpoarte', href: 'https://instagram.com/judocorpoarte' },
+          { handle: '@navarrajudo', href: 'https://instagram.com/navarrajudo' },
+        ],
       },
       {
         src: '/images/cbj.jpg',
