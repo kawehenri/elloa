@@ -15,31 +15,43 @@ function LogoCard({ logo }: { logo: LogoItem }) {
   ]
 
   return (
-    <div className="flex flex-col items-center rounded-xl border border-slate-700 bg-white/95 p-4 transition hover:border-sky-400/50 hover:shadow-lg hover:shadow-sky-900/10">
-      <div className="flex h-24 w-full items-center justify-center">
-        <img
-          src={logo.src}
-          alt={logo.alt}
-          className="max-h-full max-w-[140px] object-contain"
-          loading="lazy"
-          decoding="async"
-        />
+    <div className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-slate-700 hover:bg-slate-900">
+      <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
+        <div className="absolute -left-24 -top-24 h-56 w-56 rounded-full bg-sky-500/10 blur-2xl" />
+        <div className="absolute -bottom-24 -right-24 h-56 w-56 rounded-full bg-blue-500/10 blur-2xl" />
       </div>
-      <p className="mt-3 text-center text-xs font-medium text-slate-600">{logo.alt}</p>
-      <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
-        {instagramLinks.map((instagram) => (
-          <a
-            key={instagram.handle}
-            href={instagram.href}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-sky-500 hover:bg-sky-50 hover:text-sky-700"
-            aria-label={`Instagram ${instagram.handle}`}
-          >
-            <SocialIcon icon="instagram" className="h-3.5 w-3.5" />
-            <span>{instagram.handle}</span>
-          </a>
-        ))}
+
+      <div className="relative p-5">
+        <div className="flex items-center justify-center rounded-xl bg-white p-4">
+          <img
+            src={logo.src}
+            alt={logo.alt}
+            className="h-16 w-full max-w-[200px] object-contain"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div className="mt-4">
+          <p className="line-clamp-2 text-sm font-semibold text-slate-100">
+            {logo.alt}
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {instagramLinks.map((instagram) => (
+              <a
+                key={instagram.handle}
+                href={instagram.href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-950/40 px-3 py-2 text-xs font-semibold text-slate-200 transition hover:border-sky-500/40 hover:bg-slate-950/70 hover:text-white"
+                aria-label={`Instagram ${instagram.handle}`}
+              >
+                <SocialIcon icon="instagram" className="h-4 w-4" />
+                <span>{instagram.handle}</span>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -69,7 +81,7 @@ export function Partners({ title, intro, bullets, federations, sponsors }: Props
           <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400">
             Federada por
           </h3>
-          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {federations.map((logo) => (
               <LogoCard key={logo.alt} logo={logo} />
             ))}
@@ -80,7 +92,7 @@ export function Partners({ title, intro, bullets, federations, sponsors }: Props
           <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400">
             Apoio e patrocínio
           </h3>
-          <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {sponsors.map((logo) => (
               <LogoCard key={logo.alt} logo={logo} />
             ))}
