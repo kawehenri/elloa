@@ -1,4 +1,5 @@
 import type { GoalItem } from '../content/site'
+import { SectionBackground } from './SectionBackground'
 
 type Props = {
   title: string
@@ -16,9 +17,14 @@ export function Goals({ title, intro, items }: Props) {
   return (
     <section
       id="metas"
-      className="scroll-mt-nav border-b border-slate-800/80 bg-gradient-to-b from-slate-950 to-brand-900/30 py-16 sm:py-20"
+      className="scroll-mt-nav relative isolate overflow-hidden border-b border-slate-800/80 py-16 sm:py-20"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <SectionBackground
+        src="/images/etapas2026_1.jpeg"
+        intensity="subtle"
+        position="center 30%"
+      />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-white">{title}</h2>
         <p className="mt-3 max-w-3xl text-slate-300">{intro}</p>
         <div className="mt-8 grid gap-4 md:grid-cols-2">

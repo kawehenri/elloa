@@ -1,4 +1,5 @@
 import { SocialIcon } from './SocialIcon'
+import { SectionBackground } from './SectionBackground'
 import type { SocialLink } from '../content/site'
 
 type Props = {
@@ -25,16 +26,10 @@ export function Hero({
   return (
     <section
       id="topo"
-      className="relative overflow-hidden border-b border-slate-800/80 bg-gradient-to-b from-brand-900 via-slate-950 to-slate-950 pt-24"
+      className="relative isolate overflow-hidden border-b border-slate-800/80 pt-24"
     >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-40"
-        style={{
-          backgroundImage:
-            'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.35), transparent)',
-        }}
-      />
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-6 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-12 lg:pb-24">
+      <SectionBackground src="/images/campbra2024_2.jpeg" intensity="subtle" position="center 30%" />
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-6 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-12 lg:pb-24">
         <div className="order-2 lg:order-1">
           <p className="text-sm font-semibold uppercase tracking-widest text-sky-400">
             Atleta de judô

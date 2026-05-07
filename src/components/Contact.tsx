@@ -1,4 +1,5 @@
 import { SocialIcon } from './SocialIcon'
+import { SectionBackground } from './SectionBackground'
 import type { SocialLink } from '../content/site'
 
 type Props = {
@@ -17,8 +18,16 @@ function telHref(phone: string) {
 
 export function Contact({ title, lead, email, phone, ctaPrimary, social }: Props) {
   return (
-    <section id="contato" className="scroll-mt-nav bg-slate-950 py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section
+      id="contato"
+      className="scroll-mt-nav relative isolate overflow-hidden py-16 sm:py-20"
+    >
+      <SectionBackground
+        src="/images/regional2026.jpeg"
+        intensity="subtle"
+        position="center 20%"
+      />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-white">{title}</h2>
         <p className="mt-2 text-slate-400">{lead}</p>
 

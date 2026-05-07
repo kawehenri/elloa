@@ -1,4 +1,5 @@
 import type { StatItem } from '../content/site'
+import { SectionBackground } from './SectionBackground'
 
 type Props = {
   stats: readonly StatItem[]
@@ -8,9 +9,14 @@ export function Achievements({ stats }: Props) {
   return (
     <section
       id="conquistas"
-      className="scroll-mt-nav border-b border-slate-800/80 bg-gradient-to-b from-slate-950 to-brand-900/40 py-16 sm:py-20"
+      className="scroll-mt-nav relative isolate overflow-hidden border-b border-slate-800/80 py-16 sm:py-20"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <SectionBackground
+        src="/images/panamericano_2024.jpeg"
+        intensity="subtle"
+        position="center 35%"
+      />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-white">Conquistas em números</h2>
         <p className="mt-2 max-w-2xl text-slate-400">
           Indicadores resumidos da trajetória — atualize com dados oficiais quando disponíveis.

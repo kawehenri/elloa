@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import type { GalleryImage } from '../content/site'
+import { SectionBackground } from './SectionBackground'
 
 type Props = {
   title: string
@@ -12,24 +13,33 @@ const CATEGORY_ORDER: Category[] = ['Trajetória', 'Campeonatos', 'Equipe e Trei
 
 function ImageCard({ img }: { img: GalleryImage }) {
   return (
-    <figure className="group overflow-hidden rounded-xl border border-slate-800 bg-slate-900 transition hover:border-sky-600/40 hover:shadow-lg hover:shadow-sky-900/20">
-      <div className="aspect-[4/3] overflow-hidden">
-        <img
-          src={img.src}
-          alt={img.alt}
-          className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-          loading="lazy"
-          decoding="async"
-          width={800}
-          height={600}
-        />
+    <figure className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-slate-700 hover:bg-slate-900">
+      <div className="absolute inset-0 z-0 opacity-0 transition group-hover:opacity-100">
+        <div className="absolute -left-24 -top-24 h-56 w-56 rounded-full bg-sky-500/10 blur-2xl" />
+        <div className="absolute -bottom-24 -right-24 h-56 w-56 rounded-full bg-blue-500/10 blur-2xl" />
       </div>
-      <figcaption className="border-t border-slate-800 px-4 py-3">
-        <p className="text-[11px] font-bold uppercase tracking-wider text-sky-400">
-          {img.category}
-        </p>
-        <p className="mt-1 text-sm leading-snug text-slate-300">{img.caption}</p>
-      </figcaption>
+
+      <div className="relative z-10">
+        <div className="relative aspect-[4/3] overflow-hidden">
+          <img
+            src={img.src}
+            alt={img.alt}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+            loading="lazy"
+            decoding="async"
+            width={800}
+            height={600}
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/10 to-transparent" />
+          <span className="absolute left-3 top-3 rounded-full border border-white/10 bg-slate-950/70 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-sky-300 backdrop-blur">
+            {img.category}
+          </span>
+        </div>
+
+        <figcaption className="border-t border-slate-800/80 px-4 py-3">
+          <p className="text-sm leading-snug text-slate-200">{img.caption}</p>
+        </figcaption>
+      </div>
     </figure>
   )
 }
@@ -78,9 +88,14 @@ export function Gallery({ title, images }: Props) {
   return (
     <section
       id="galeria"
-      className="scroll-mt-nav border-b border-slate-800/80 bg-gradient-to-b from-brand-900/30 to-slate-950 py-16 sm:py-20"
+      className="scroll-mt-nav relative isolate overflow-hidden border-b border-slate-800/80 py-16 sm:py-20"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <SectionBackground
+        src="/images/copaminas2025_2.jpeg"
+        intensity="subtle"
+        position="center 25%"
+      />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-white">{title}</h2>
         <p className="mt-2 max-w-2xl text-slate-400">
           Imagens organizadas por categoria — da trajetória inicial aos campeonatos e vida em equipe.

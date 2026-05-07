@@ -1,5 +1,6 @@
 import type { LogoItem } from '../content/site'
 import { SocialIcon } from './SocialIcon'
+import { SectionBackground } from './SectionBackground'
 
 type Props = {
   title: string
@@ -61,9 +62,14 @@ export function Partners({ title, intro, bullets, federations, sponsors }: Props
   return (
     <section
       id="trajetoria"
-      className="scroll-mt-nav border-b border-slate-800/80 bg-slate-950 py-16 sm:py-20"
+      className="scroll-mt-nav relative isolate overflow-hidden border-b border-slate-800/80 py-16 sm:py-20"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <SectionBackground
+        src="/images/sensei.jpeg"
+        intensity="subtle"
+        position="center 20%"
+      />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-white">{title}</h2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-300">{intro}</p>
         <ul className="mt-8 space-y-3 text-slate-200">

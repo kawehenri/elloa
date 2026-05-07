@@ -1,3 +1,5 @@
+import { SectionBackground } from './SectionBackground'
+
 type Props = {
   title: string
   pitch: string
@@ -8,9 +10,14 @@ export function Sponsorship({ title, pitch, benefits }: Props) {
   return (
     <section
       id="parceria"
-      className="scroll-mt-nav border-b border-slate-800/80 bg-slate-950 py-16 sm:py-20"
+      className="scroll-mt-nav relative isolate overflow-hidden border-b border-slate-800/80 py-16 sm:py-20"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <SectionBackground
+        src="/images/sulamericano2025.jpeg"
+        intensity="subtle"
+        position="center 30%"
+      />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-white">{title}</h2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-300">{pitch}</p>
 
