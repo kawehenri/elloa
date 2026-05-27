@@ -26,7 +26,7 @@ export function Hero({
   return (
     <section
       id="topo"
-      className="relative isolate overflow-hidden border-b border-slate-800/80 pt-24"
+      className="relative isolate overflow-hidden border-b border-slate-800/80 py-12 sm:py-16"
     >
       <SectionBackground src="/images/campbra2024_2.jpeg" intensity="subtle" position="center 30%" />
       <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-6 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-12 lg:pb-24">

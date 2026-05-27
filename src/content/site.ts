@@ -41,8 +41,8 @@ export const site = {
   seo: {
     title: 'Elloa Maisa Pessoa | Judô de Alta Performance',
     description:
-      'Site oficial de Elloa Maisa Pessoa, atleta de judô de alta performance da Equipe Corpo Arte Judô Brasília. Apresentação, metas, conquistas e proposta de patrocínio.',
-    ogImage: '/images/perfil.jpg',
+      'Elloa Maisa Pessoa — medalha de bronze no Campeonato Brasileiro Nacional Sub-15 em Aracaju (2026). Equipe Corpo Arte Judô Brasília.',
+    ogImage: '/images/brasileiro_2026_sergipe.jpeg',
     siteUrl: 'https://example.com',
   },
 
@@ -61,7 +61,19 @@ export const site = {
 
   heroCta: { label: 'Ver apresentação', href: '#apresentacao' },
 
+  newsHighlight: {
+    badge: 'Novidade · maio de 2026',
+    title: 'Medalha de bronze no Campeonato Brasileiro Nacional',
+    subtitle: 'Sub-15 -52kg · Aracaju, Sergipe',
+    body: 'Em maio de 2026, Elloá disputou o Campeonato Brasileiro Nacional em Aracaju com lutas duras e se consagrou com a medalha de bronze na categoria Sub-15.',
+    image: '/images/brasileiro_2026_sergipe.jpeg',
+    imageAlt: 'Elloá Pessoa no Campeonato Brasileiro Nacional 2026 em Aracaju, Sergipe',
+    medalLabel: 'Bronze · Brasileiro 2026',
+    cta: { label: 'Ver na galeria', href: '#galeria' },
+  },
+
   nav: [
+    { id: 'novidade', label: 'Novidade', href: '#novidade' },
     { id: 'apresentacao', label: 'Apresentação', href: '#apresentacao' },
     { id: 'conquistas', label: 'Conquistas', href: '#conquistas' },
     { id: 'metas', label: 'Metas', href: '#metas' },
@@ -93,10 +105,10 @@ export const site = {
   },
 
   stats: [
-    { id: '1', value: '52', label: 'Campeonatos' },
+    { id: '1', value: '53', label: 'Campeonatos' },
     { id: '2', value: '137', label: 'Lutas' },
     { id: '3', value: '28', label: 'Medalhas de ouro' },
-    { id: '4', value: '14', label: 'Pratas e bronzes', hint: '10 pratas e 4 bronzes' }
+    { id: '4', value: '15', label: 'Pratas e bronzes', hint: '10 pratas e 5 bronzes' },
   ] satisfies StatItem[],
 
   goals: {
@@ -112,9 +124,10 @@ export const site = {
       },
       {
         id: 'm2',
-        title: 'Ser campeã do Campeonato Brasileiro Nacional',
-        detail: 'Etapa nacional em Aracaju (SE), maio de 2026.',
-        status: 'Em preparação',
+        title: 'Campeonato Brasileiro Nacional — Aracaju (SE)',
+        detail:
+          'Maio de 2026: disputou lutas duras na categoria Sub-15 e conquistou a medalha de bronze.',
+        status: 'Concluído',
       },
       {
         id: 'm3',
@@ -148,9 +161,10 @@ export const site = {
     intro:
       'Da base em Brasília para eventos nacionais e internacionais, cada campeonato fortalece minha experiência competitiva e meu desenvolvimento como atleta.',
     bullets: [
+      'Campeonato Brasileiro Nacional — Aracaju, Sergipe (maio 2026) - medalha de bronze Sub-15',
       'Campeonato Pan-Americano — Varadero, Cuba (2024) - 3º lugar',
       'Tour Sul-Americano — Assunção, Paraguai (2025) - vice-campeã',
-      'Campeonato Brasileiro de Judô (2023, 2024, 2025) - 7º lugar em 2023 e vice-campeã em 2024',
+      'Campeonato Brasileiro de Judô (2023, 2024, 2025, 2026) - 7º em 2023, vice em 2024 e bronze em Aracaju 2026',
       'JEBS — Jogos Escolares Brasileiros (2024) - 3º lugar na Série Ouro Sub-15',
       'Jogos Escolares de Goiás — Campeã (2024)',
       'Copa Minas de Judô (2024, 2024)',
@@ -268,6 +282,14 @@ export const site = {
       },
 
       // --- Campeonatos (cronológico: 2023 → 2026) ---
+      {
+        id: 'g06b',
+        src: '/images/brasileiro_2026_sergipe.jpeg',
+        alt: 'Campeonato Brasileiro Nacional 2026 em Aracaju',
+        category: 'Campeonatos',
+        caption:
+          'Brasileiro Nacional 2026 (Aracaju, SE) — medalha de bronze Sub-15 após lutas duras em maio.',
+      },
       {
         id: 'g07',
         src: '/images/campbra2023.jpeg',

@@ -1,4 +1,5 @@
 import { About } from './components/About'
+import { NewsHighlight } from './components/NewsHighlight'
 import { Achievements } from './components/Achievements'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
@@ -18,6 +19,16 @@ function App() {
       </a>
       <Header brandName={site.brand.name} nav={site.nav} />
       <main id="main">
+        <NewsHighlight
+          badge={site.newsHighlight.badge}
+          title={site.newsHighlight.title}
+          subtitle={site.newsHighlight.subtitle}
+          body={site.newsHighlight.body}
+          image={site.newsHighlight.image}
+          imageAlt={site.newsHighlight.imageAlt}
+          medalLabel={site.newsHighlight.medalLabel}
+          cta={site.newsHighlight.cta}
+        />
         <Hero
           fullName={site.athlete.fullName}
           tagline={site.athlete.tagline}
