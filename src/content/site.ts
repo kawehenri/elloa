@@ -202,18 +202,6 @@ export const site = {
         instagramHref: 'https://instagram.com/matheuscfisio',
       },
       {
-        src: '/images/renato_rocha_apoio.png',
-        alt: 'Renato Rocha Brasília',
-        instagramHandle: '@renatorochabrasilia',
-        instagramHref: 'https://instagram.com/renatorochabrasilia',
-      },
-      {
-        src: '/images/reciclando_futuro.PNG',
-        alt: 'Reciclando Futuro',
-        instagramHandle: '@reciclando_futuro',
-        instagramHref: 'https://instagram.com/reciclando_futuro',
-      },
-      {
         src: '/images/parceria_luminyoralstudio.jpeg',
         alt: 'Luminy Oral Studio',
         instagramHandle: '@luminyoralstudio',
@@ -477,14 +465,7 @@ export const site = {
       label: 'Enviar e-mail',
       href: 'mailto:elcymarbell@gmail.com?subject=Contato%20pelo%20site%20oficial',
     },
-    social: [
-      {
-        id: 's1',
-        label: '@reciclando_futuro',
-        href: 'https://instagram.com/reciclando_futuro',
-        icon: 'instagram',
-      },
-    ] satisfies SocialLink[],
+    social: [] satisfies SocialLink[],
   },
 
   footer: {
